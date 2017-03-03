@@ -9,13 +9,18 @@
             <span>Forward</span><Icon type="right" />
         </lz-button>
     </lz-button-group>
+    <Alert message="Success Text" type="success"></Alert>
+    <Alert message="Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text" type="warning" />
+    <Alert message="Success Tips" type="success" showIcon="true" :onClose="onClose" />
   </div>
+
 </template>
 
 <script>
 
 import Button from './button';
 import Icon from './icon';
+import Alert from './alert';
 
 export default {
   name: 'hello',
@@ -27,11 +32,15 @@ export default {
   components:{
     'lz-button': Button,
     'lz-button-group': Button.Group,
-    Icon: Icon
+    Icon: Icon,
+    Alert: Alert
   },
   methods: {
     bc(){
       console.log("bc");
+    },
+    onClose(){
+      console.log("close");
     }
   }
 }
